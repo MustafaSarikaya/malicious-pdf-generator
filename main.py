@@ -15,7 +15,6 @@ try:
                 page.rotate(90)
             output.add_page(page)
 
-        # More complex JavaScript example
         js_code = """
         var today = new Date();
         var msg = 'PDF opened on: ' + today.toLocaleDateString() + ' ' + today.toLocaleTimeString();
