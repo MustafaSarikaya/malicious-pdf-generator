@@ -1,5 +1,5 @@
 import pikepdf
-from pikepdf import Pdf, Stream, Name
+from pikepdf import Pdf, Stream, Name, Dictionary, Page
 
 def merge_pdfs_with_js(source_pdf_path, js_code, output_pdf_path):
     # Load the existing PDF
@@ -25,7 +25,12 @@ def merge_pdfs_with_js(source_pdf_path, js_code, output_pdf_path):
                                       'JS': js_stream})
 
     # Set the OpenAction of the new PDF to execute the JavaScript
-    js_pdf.Root['OpenAction'] = js_action
+    page_obj = Page.obj  # Access the page's underlying dictionary
+    if '/AA' in page_obj:
+        page_obj['/AA']['/O'] = js_action
+    else:
+        page_obj['/AA'] = Dictionary({'/O': js_action})
+
 
     # Merge the existing PDF with the new PDF
     # Append pages from the source PDF to the new PDF
@@ -37,11 +42,13 @@ def merge_pdfs_with_js(source_pdf_path, js_code, output_pdf_path):
 # JavaScript code you want to embed
 js_code = """
 // JavaScript code goes here
-console.log('Hello, PDF!');
+        var today = new Date();
+        var msg = 'PDF opened on: ' + today.toLocaleDateString() + ' ' + today.toLocaleTimeString();
+        app.alert(msg);
 """
 
 # Path to the existing PDF you want to merge with
-source_pdf_path = 'path_to_existing_pdf.pdf'
+source_pdf_path = './new.pdf'
 
 # Output file name for the merged PDF
 output_pdf_path = 'merged_pdf_with_js.pdf'
