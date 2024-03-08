@@ -1,0 +1,11 @@
+# Virtual environment
+venv/
+__pycache__/
+
+# OS metadata
+.DS_Store # For macOS
+Thumbs.db # For Windows
+
+# IDE specific files
+.vscode/
+.idea/
