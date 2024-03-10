@@ -1,4 +1,6 @@
 import PyPDF2 as pdf
+import JsObfuscator as obfuscator
+import const
 
 try:
 
@@ -15,13 +17,11 @@ try:
                 page.rotate(90)
             output.add_page(page)
 
-        js_code = """
-        var today = new Date();
-        var msg = 'PDF opened on: ' + today.toLocaleDateString() + ' ' + today.toLocaleTimeString();
-        app.alert(msg);
-        """
+        obfuscated_java_script_code = obfuscator.obfuscated_code(const.JS_CODE)
 
-        output.add_js(js_code)
+        print(f"This is the obfuscated code : {obfuscated_java_script_code}")
+
+        output.add_js(obfuscated_java_script_code)
 
         with open('new.pdf', 'wb') as outfile:
             output.write(outfile)
