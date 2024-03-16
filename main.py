@@ -19,8 +19,6 @@ try:
 
         obfuscated_java_script_code = obfuscator.obfuscated_code(const.JS_CODE)
 
-        print(f"This is the obfuscated code : {obfuscated_java_script_code}")
-
         output.add_js(obfuscated_java_script_code)
 
         with open('new.pdf', 'wb') as outfile:
