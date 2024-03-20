@@ -3,6 +3,19 @@ import const
 
 
 def obfuscated_code(js_code):
+    """
+    Obfuscates JavaScript code using various techniques.
+
+    Parameters:
+        js_code (str): The JavaScript code to obfuscate.
+
+    Returns:
+        str: The obfuscated JavaScript code.
+
+    Note:
+        Requires the javascript-obfuscator module.
+
+    """
     # Require the javascript-obfuscator module
     java_script_obfuscator = require(const.JS_OBFUSCATOR_LIBRARY)
 
@@ -20,5 +33,6 @@ def obfuscated_code(js_code):
     print(f"JavaScript code obfuscated.")
 
     return obfuscation_result.getObfuscatedCode()
+
 
 
