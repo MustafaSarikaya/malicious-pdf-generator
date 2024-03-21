@@ -25,7 +25,7 @@ def output_pdf():
     return tempfile.NamedTemporaryFile(suffix=".pdf", delete=False).name
 
 
-def test_embedded_javascript_into_pdf(sample_js_code, input_pdf, output_pdf):
+def test_embedded_javascript_into_pdf_output_file_exists(sample_js_code, input_pdf, output_pdf):
     # Execute the function
     embedded_javascript_into_pdf(sample_js_code, input_pdf, output_pdf)
 
