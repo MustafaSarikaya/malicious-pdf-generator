@@ -1,0 +1,3 @@
+javascript==1!1.1.3
+pdfalyzer==1.14.6
+pytest==8.1.1
