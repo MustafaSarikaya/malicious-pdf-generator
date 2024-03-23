@@ -1,4 +1,4 @@
-import PyPDF2 as pdf
+import pypdf as pdf
 
 
 def embedded_javascript_into_pdf(js_code, input_pdf, output_pdf):

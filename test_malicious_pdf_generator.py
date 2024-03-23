@@ -32,12 +32,12 @@ def test_obfuscated_code_different(sample_js_code):
 
 def test_check_open_action(output_pdf):
     # Check if the open action is present
-    assert check_open_action(output_pdf) == True
+    assert check_open_action(output_pdf)
 
 
 def test_check_open_action_not(input_pdf):
     # Check if the open action is not present
-    assert check_open_action(input_pdf) == False
+    assert not check_open_action(input_pdf)
 
 
 def test_embedded_javascript_into_pdf_output_file_exists(sample_js_code, input_pdf, output_pdf):
@@ -51,4 +51,4 @@ def test_embedded_javascript_into_pdf_output_file_exists(sample_js_code, input_p
 def test_embedded_javascript_into_pdf_output_open_action(sample_js_code, input_pdf, output_pdf):
     embedded_javascript_into_pdf(sample_js_code, input_pdf, output_pdf)
 
-    assert check_open_action(output_pdf) == True
+    assert check_open_action(output_pdf)
