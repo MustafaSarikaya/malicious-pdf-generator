@@ -133,3 +133,7 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
+
+package-lock.json
+package.json
+node_modules
