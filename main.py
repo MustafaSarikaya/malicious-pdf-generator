@@ -1,5 +1,4 @@
-import const
-from malicious_pdf_generator import embedded_javascript_into_pdf, obfuscated_code, check_open_action
+from malicious_pdf_generator import embedded_javascript_into_pdf, obfuscated_code, const
 
 if __name__ == "__main__":
     obfuscated_code = obfuscated_code(const.JS_CODE)
