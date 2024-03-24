@@ -1,7 +1,6 @@
 import os
 import pytest
-from malicious_pdf_generator import embedded_javascript_into_pdf, obfuscated_code, check_open_action
-import const
+from malicious_pdf_generator import embedded_javascript_into_pdf, obfuscated_code, check_open_action, const
 
 
 @pytest.fixture

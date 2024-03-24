@@ -1,5 +1,5 @@
 from javascript import require
-import const
+from malicious_pdf_generator import const
 
 
 def obfuscated_code(js_code):
