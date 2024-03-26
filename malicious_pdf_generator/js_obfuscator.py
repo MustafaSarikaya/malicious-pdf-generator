@@ -30,9 +30,6 @@ def obfuscated_code(js_code):
         'stringArrayThreshold': 1
     })
 
-    print(f"JavaScript code obfuscated.")
+    print("JavaScript code obfuscated.")
 
     return obfuscation_result.getObfuscatedCode()
-
-
-
