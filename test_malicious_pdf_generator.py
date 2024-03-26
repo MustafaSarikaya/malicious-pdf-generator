@@ -1,7 +1,9 @@
 import os
 import pytest
-from malicious_pdf_generator import embedded_javascript_into_pdf, obfuscated_code, check_open_action, const
-
+from malicious_pdf_generator import embedded_javascript_into_pdf
+from malicious_pdf_generator import obfuscated_code
+from malicious_pdf_generator import check_open_action
+from malicious_pdf_generator import const
 
 @pytest.fixture
 def sample_js_code():
@@ -11,12 +13,12 @@ def sample_js_code():
 
 @pytest.fixture
 def input_pdf():
-    return const.input_pdf
+    return const.INPUT_PDF_DEFAULT
 
 
 @pytest.fixture
 def output_pdf():
-    return const.output_pdf
+    return const.OUTPUT_PDF_DEFAULT
 
 
 def test_obfuscated_code_empty(sample_js_code):
@@ -39,7 +41,9 @@ def test_check_open_action_not(input_pdf):
     assert not check_open_action(input_pdf)
 
 
-def test_embedded_javascript_into_pdf_output_file_exists(sample_js_code, input_pdf, output_pdf):
+def test_embedded_javascript_into_pdf_output_file_exists(sample_js_code,
+                                                         input_pdf,
+                                                         output_pdf):
     # Execute the function
     embedded_javascript_into_pdf(sample_js_code, input_pdf, output_pdf)
 
@@ -47,7 +51,9 @@ def test_embedded_javascript_into_pdf_output_file_exists(sample_js_code, input_p
     assert os.path.exists(output_pdf)
 
 
-def test_embedded_javascript_into_pdf_output_open_action(sample_js_code, input_pdf, output_pdf):
+def test_embedded_javascript_into_pdf_output_open_action(sample_js_code,
+                                                         input_pdf,
+                                                         output_pdf):
     embedded_javascript_into_pdf(sample_js_code, input_pdf, output_pdf)
 
     assert check_open_action(output_pdf)

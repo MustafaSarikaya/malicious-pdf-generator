@@ -30,7 +30,9 @@ def check_open_action(pdf_path: str) -> bool:
     """
     pdfalyzer = Pdfalyzer(pdf_path)
     try:
-        page_nodes = findall_by_attr(pdfalyzer.pdf_tree, name='type', value='/Catalog')
+        page_nodes = findall_by_attr(pdfalyzer.pdf_tree,
+                                     name='type',
+                                     value='/Catalog')
 
         catalog_node = page_nodes[0]
 
