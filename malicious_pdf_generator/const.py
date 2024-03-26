@@ -26,5 +26,5 @@ INPUT_PDF_DEFAULT: str = "old.pdf"
 OUTPUT_PDF_DEFAULT: str = "new.pdf"
 
 # Message constants
-INPUT_PDF_OPTION_HELP: str = "The input PDF file path."
-OUTPUT_PDF_OPTION_HELP: str = "The output PDF file path."
+INPUT_PDF_OPTION_HELP: str = "Specify the file path of the input PDF."
+OUTPUT_PDF_OPTION_HELP: str = "Specify the file path for the output PDF."

