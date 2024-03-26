@@ -1,3 +1,3 @@
-from .embedded_javascript_into_pdf import *
-from .js_obfuscator import *
-from .check_open_action import *
+from .embedded_javascript_into_pdf import embedded_javascript_into_pdf
+from .js_obfuscator import obfuscated_code
+from .check_open_action import check_open_action

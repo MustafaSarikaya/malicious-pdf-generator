@@ -34,4 +34,3 @@ def embedded_javascript_into_pdf(js_code, input_pdf, output_pdf):
         print(f"Error accessing file: {e}")
     except Exception as e:
         print(f"An error occurred: {e}")
-
