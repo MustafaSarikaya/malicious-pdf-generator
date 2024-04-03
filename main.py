@@ -45,7 +45,7 @@ def choose_payload():
     while payload is None:
 
         print("Choose the payload to embed:")
-        print("1. Backdoor attack using Open URL")
+        print("1. Download file (URL action)")
         print("2. Alert message")
         choice = int(input("Enter the payload number: "))
 

@@ -1,5 +1,5 @@
 # URL:
-SERVER_URL: str = "https://www.google.ca"
+URL: str = "https://nodejs.org/dist/v20.12.1/node-v20.12.1-x64.msi"
 
 # Payloads constants
 
@@ -14,7 +14,7 @@ JS_CODE_TEST = """
 """
 
 PAYLOAD_LAUNCH_URL_OPEN_ACTION = f"""
-    app.launchURL("{SERVER_URL}");
+    app.launchURL("{URL}");
 """
 
 # Javascript library
