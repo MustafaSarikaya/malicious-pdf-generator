@@ -10,13 +10,13 @@ Before using this Python tool, ensure that you have the following prerequisites 
 
 ### Python Dependencies:
 
-javascript (version 1!1.1.3)
-pdfalyzer (version 1.14.6)
-pytest (version 8.1.1)
-pytest-cov (version 4.1.0)
-PyPDF2 (version 2.12.1)
-setuptools (version 69.2.0)
-pyfiglet (version 1.0.2)
+- javascript (version 1!1.1.3)
+- pdfalyzer (version 1.14.6)
+- pytest (version 8.1.1)
+- pytest-cov (version 4.1.0)
+- PyPDF2 (version 2.12.1)
+- setuptools (version 69.2.0)
+- pyfiglet (version 1.0.2)
 
 ### Node.js Dependencies:
 
