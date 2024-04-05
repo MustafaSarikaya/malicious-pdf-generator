@@ -5,12 +5,35 @@
 
 The Malicious PDF Generator is a Python-based tool that allows you to generate PDF files with embedded JavaScript payloads. The tool provides two types of payloads: a download action and an alert message displaying the current date.
 
+## Prerequisites
+Before using this Python tool, ensure that you have the following prerequisites installed:
+
+### Python Dependencies:
+
+javascript (version 1!1.1.3)
+pdfalyzer (version 1.14.6)
+pytest (version 8.1.1)
+pytest-cov (version 4.1.0)
+PyPDF2 (version 2.12.1)
+setuptools (version 69.2.0)
+pyfiglet (version 1.0.2)
+
+### Node.js Dependencies:
+
+javascript-obfuscator (version 4.0.0)
+
+Ensure that both Python and Node.js are installed on your system before proceeding with the installation of these dependencies. You can install Node.js from here if you haven't already.
+
 ## Installation
 
 To install the tool, you need to have Python and pip installed on your system. Once you have these prerequisites, you can install the tool by running the following command in your terminal:
 
 ```bash
 pip install -e .
+```
+
+```bash
+npm install -g javascript-obfuscator@4.0.0
 ```
 
 This command installs the tool and its dependencies.
