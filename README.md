@@ -35,7 +35,7 @@ Choose the payload to embed into the pdf file:
 Enter the payload number: 1
 ```
 
-In this example, the tool generates a malicious PDF file named `output.pdf` based on the `input.pdf` file. The PDF file contains a JavaScript payload that downloads to a file when the user opens the PDF file.
+In this example, the tool generates a malicious PDF file named `output.pdf` based on the `input.pdf` file. The PDF file contains a JavaScript payload that downloads a file when the user opens the PDF file.
 
 ## Payloads
 
