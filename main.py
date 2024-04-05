@@ -2,6 +2,7 @@ from malicious_pdf_generator import obfuscated_code
 from malicious_pdf_generator import embedded_javascript_into_pdf
 from malicious_pdf_generator import const
 import argparse
+import pyfiglet
 
 
 def cli():
@@ -44,7 +45,7 @@ def choose_payload():
 
     while payload is None:
 
-        print("Choose the payload to embed:")
+        print("Choose the payload to embed into the pdf file:")
         print("1. Download file (URL action)")
         print("2. Alert message")
         choice = int(input("Enter the payload number: "))
@@ -58,7 +59,17 @@ def choose_payload():
     return payload
 
 
+def banner():
+    """
+    Display the banner for the malicious PDF generator.
+    :return:
+    """
+    ban = pyfiglet.figlet_format("Malicious PDF Generator", font="slant")
+    print(ban)
+
+
 def main():
+    banner()
     args = cli()
     payload = choose_payload()
     generate_malicious_pdf(payload, args.input, args.output)
