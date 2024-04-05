@@ -20,7 +20,7 @@ Before using this Python tool, ensure that you have the following prerequisites 
 
 ### Node.js Dependencies:
 
-javascript-obfuscator (version 4.0.0)
+- javascript-obfuscator (version 4.0.0)
 
 Ensure that both Python and Node.js are installed on your system before proceeding with the installation of these dependencies. You can install Node.js from here if you haven't already.
 
