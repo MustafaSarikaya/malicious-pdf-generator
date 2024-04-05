@@ -46,12 +46,18 @@ def choose_payload():
         print("Choose the payload to embed into the pdf file:")
         print("1. Download file (URL action)")
         print("2. Alert message")
+        print("3. Adobe Reader Calculate Crash")
+        print("4. Adobe Reader Font Exploit Shellcode")
         choice = int(input("Enter the payload number: "))
 
         if choice == 1:
             payload = const.PAYLOAD_LAUNCH_URL_OPEN_ACTION
         elif choice == 2:
             payload = const.JS_CODE
+        elif choice == 3:
+            payload = const.PAYLOAD_MOCK_ADOBE_CRASH
+        elif choice == 4:
+            payload = const.PAYLOAD_MOCK_SHELLCODE_ADOBE_EXPLOIT      
         else:
             print("Invalid choice.")
     return payload

@@ -77,7 +77,7 @@ PAYLOAD_MOCK_ADOBE_CRASH =  """
     
 """
 
-PAYLOAD_MOCK_SHELLCODE_ADOBE_EXPLOT = """
+PAYLOAD_MOCK_SHELLCODE_ADOBE_EXPLOIT = """
     console.show();
 
     const VersionData = {
