@@ -17,7 +17,7 @@ This command installs the tool and its dependencies.
 
 ## Usage
 
-To use the tool, you can run the `malicious_pdf_generator` script from your command line. The script accepts several arguments:
+To use the tool, you can run the `python main.py` script from your command line. The script accepts several arguments:
 
 - `-i` or `--input`: The path to the input PDF file. This argument is optional. If not provided, the tool uses a default input PDF file.
 - `-o` or `--output`: The path to the output PDF file. This argument is optional. If not provided, the tool generates the output PDF file in the current directory.
@@ -25,7 +25,7 @@ To use the tool, you can run the `malicious_pdf_generator` script from your comm
 Here's an example of how to run the script:
 
 ```bash
-malicious_pdf_generator -i input.pdf -o output.pdf
+python main.py -i input.pdf -o output.pdf
 ```
 
 ```bash
