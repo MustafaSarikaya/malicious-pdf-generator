@@ -1,6 +1,4 @@
-from malicious_pdf_generator import obfuscated_code
-from malicious_pdf_generator import embedded_javascript_into_pdf
-from malicious_pdf_generator import const
+from malicious_pdf_generator import obfuscated_code, embedded_javascript_into_pdf, const
 import argparse
 import pyfiglet
 
