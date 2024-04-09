@@ -1,4 +1,5 @@
 import os
+from PyPDF2 import PdfReader
 import pytest
 from malicious_pdf_generator import embedded_javascript_into_pdf
 from malicious_pdf_generator import obfuscated_code
@@ -51,9 +52,48 @@ def test_embedded_javascript_into_pdf_output_file_exists(sample_js_code,
     assert os.path.exists(output_pdf)
 
 
+# work in progress
+def test_embedded_javascript_into_pdf_input_file_exists(sample_js_code,
+                                                         input_pdf,
+                                                         output_pdf):
+    # Execute the function
+    embedded_javascript_into_pdf(sample_js_code, input_pdf, output_pdf)
+
+    # Check if the input PDF file exists
+    assert os.path.exists(input_pdf)
+
 def test_embedded_javascript_into_pdf_output_open_action(sample_js_code,
                                                          input_pdf,
                                                          output_pdf):
     embedded_javascript_into_pdf(sample_js_code, input_pdf, output_pdf)
 
     assert check_open_action(output_pdf)
+
+# work in progress. The following unit tests need further work
+def test_embedded_javascript_into_pdf(sample_js_code, input_pdf, output_pdf):
+    # Execute the function
+    embedded_javascript_into_pdf(sample_js_code, input_pdf, output_pdf)
+
+    # Check if the output PDF file exists
+    assert os.path.exists(output_pdf)
+
+    # Validate the content or properties of the output PDF file
+    with open(output_pdf, 'rb') as file:
+        reader = PdfReader(file)
+        # Check if the number of pages is as expected
+        assert len(reader.pages) > 0
+
+
+def test_embedded_javascript_into_pdf_empty_js_code(input_pdf, output_pdf):
+    # Execute the function with empty JavaScript code
+    embedded_javascript_into_pdf("", input_pdf, output_pdf)
+    # Check if the output PDF file exists
+    assert os.path.exists(output_pdf)
+
+def test_embedded_javascript_into_pdf_large_js_code(sample_js_code, input_pdf, output_pdf):
+    # Create a large JavaScript code string
+    large_js_code = "A" * 10000
+    # Execute the function with large JavaScript code
+    embedded_javascript_into_pdf(large_js_code, input_pdf, output_pdf)
+    # Check if the output PDF file exists
+    assert os.path.exists(output_pdf)

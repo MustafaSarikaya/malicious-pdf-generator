@@ -14,6 +14,7 @@ setup(
         "pytest-cov==4.1.0",
         "PyPDF2==2.12.1",
         "setuptools==69.2.0",
+        "pyfiglet==1.0.2"
     ],
     entry_points={
         "console_scripts": [
