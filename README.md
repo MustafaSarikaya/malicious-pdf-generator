@@ -3,7 +3,7 @@
 
 ## Overview
 
-The Malicious PDF Generator is a Python-based tool that allows you to generate PDF files with embedded JavaScript payloads. The tool provides two types of payloads: a download action and an alert message displaying the current date.
+The Malicious PDF Generator is a Python-based tool that allows you to generate PDF files with embedded JavaScript payloads. The tool provides three types of payloads: a download action and an alert message displaying the current date and track and collect information payload. 
 
 ## Prerequisites
 Before using this Python tool, ensure that you have the following prerequisites installed:
@@ -68,6 +68,7 @@ python main.py -i input.pdf -o output.pdf
 Choose the payload to embed into the pdf file:
 1. Download file (URL action)
 2. Alert message
+3.Collect information using Grabify (URL action)
 Enter the payload number: 1
 ```
 
@@ -75,7 +76,8 @@ In this example, the tool generates a malicious PDF file named `output.pdf` base
 
 ## Payloads
 
-The tool provides two types of JavaScript payloads:
+The tool provides three types of JavaScript payloads:
 
 - `downloader`: This payload downloads a file when the PDF file is opened.
 - `alert_date`: This payload displays an alert message with the current date when the PDF file is opened.
+- `track_and_collect_information`: This payload track and collect informations(IP address and device information) about the person who open the pdf file.

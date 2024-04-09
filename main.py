@@ -46,12 +46,15 @@ def choose_payload():
         print("Choose the payload to embed into the pdf file:")
         print("1. Download file (URL action)")
         print("2. Alert message")
+        print("3. Collect information using Grabify (URL action)")
         choice = int(input("Enter the payload number: "))
 
         if choice == 1:
-            payload = const.PAYLOAD_LAUNCH_URL_OPEN_ACTION
+            payload = const.PAYLOAD_DOWNLOAD_FILE
         elif choice == 2:
             payload = const.JS_CODE
+        elif choice == 3:
+            payload = const.PAYLOAD_COLLECT_INFORMATION_USING_GRABIFY
         else:
             print("Invalid choice.")
     return payload
