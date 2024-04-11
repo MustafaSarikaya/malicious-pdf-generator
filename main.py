@@ -47,6 +47,9 @@ def choose_payload():
         print("1. Download file (URL action)")
         print("2. Alert message")
         print("3. Collect information using Grabify (URL action)")
+        print("4. Adobe Reader Calculate Crash")
+        print("5. Adobe Reader Font Exploit Shellcode")
+        print("6. Dropper")
         choice = int(input("Enter the payload number: "))
 
         if choice == 1:
@@ -55,6 +58,12 @@ def choose_payload():
             payload = const.JS_CODE
         elif choice == 3:
             payload = const.PAYLOAD_COLLECT_INFORMATION_USING_GRABIFY
+        elif choice == 4:
+            payload = const.PAYLOAD_MOCK_ADOBE_CRASH
+        elif choice == 5:
+            payload = const.PAYLOAD_MOCK_SHELLCODE_ADOBE_EXPLOIT   
+        elif choice == 6:
+            payload = const.PAYLOAD_DROPPER       
         else:
             print("Invalid choice.")
     return payload
