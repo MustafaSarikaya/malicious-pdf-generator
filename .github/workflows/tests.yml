@@ -27,4 +27,4 @@ jobs:
         pip install -e .
     - name: Test with pytest
       run: |
-        pytest --cov=malicious_pdf_generator --cov-report=term-missing
+        pytest --cov=malicious_pdf_generator --cov-report=term-missing --cov-report=xml
