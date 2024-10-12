@@ -1,6 +1,5 @@
 # Malicious PDF Generator
 ![Tests](https://github.com/MustafaSarikaya/malicious-pdf-generator/actions/workflows/tests.yml/badge.svg)
-![Coverage](https://github.com/MustafaSarikaya/malicious-pdf-generator/actions/workflows/tests.yml/badge.svg)
 
 
 ## Overview
