@@ -42,6 +42,20 @@ def test_check_open_action_not(input_pdf):
     assert not check_open_action(input_pdf)
 
 
+def test_check_open_action_FileNotFoundError(monkeypatch):
+
+    def mock_load_binary_data(*args, **kwargs):
+        raise FileNotFoundError("Mocked FileNotFoundError")
+
+    monkeypatch.setattr("yaralyzer.helpers.file_helper.load_binary_data", mock_load_binary_data)
+
+
+    with pytest.raises(FileNotFoundError, match="No such file or directory"):
+        check_open_action("non_existent_file.pdf")
+
+
+
+
 def test_embedded_javascript_into_pdf_output_file_exists(sample_js_code,
                                                          input_pdf,
                                                          output_pdf):

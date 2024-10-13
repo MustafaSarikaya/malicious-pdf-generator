@@ -40,6 +40,5 @@ def check_open_action(pdf_path: str) -> bool:
 
         return contains_action_javascript(str(catalog_node_children))
 
-    except Exception as e:
-        print(f"Error: {e}")
-        return False
+    except FileNotFoundError:
+        raise FileNotFoundError(f"No such file or directory")
