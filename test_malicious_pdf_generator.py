@@ -97,3 +97,16 @@ def test_embedded_javascript_into_pdf_large_js_code(sample_js_code, input_pdf, o
     embedded_javascript_into_pdf(large_js_code, input_pdf, output_pdf)
     # Check if the output PDF file exists
     assert os.path.exists(output_pdf)
+
+def test_embedded_javascript_into_pdf_IOError(sample_js_code, input_pdf,output_pdf):
+    with pytest.raises(IOError, match="Error accessing file"):
+        embedded_javascript_into_pdf(sample_js_code, "non_existent_input.pdf", output_pdf)
+
+def test_embedded_javascript_into_pdf_Exception(monkeypatch, input_pdf, output_pdf):
+    def mock_open(*args, **kwargs):
+        raise Exception("Mocked exception")
+    monkeypatch.setattr("builtins.open", mock_open)
+
+    # Fix the regex to match the actual error message
+    with pytest.raises(Exception, match="An error occurred : Mocked exception"):
+        embedded_javascript_into_pdf("js_code", input_pdf, output_pdf)

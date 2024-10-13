@@ -31,6 +31,6 @@ def embedded_javascript_into_pdf(js_code, input_pdf, output_pdf):
                 output.write(outfile)
 
     except IOError as e:
-        print(f"Error accessing file: {e}")
+        raise IOError(f"Error accessing file : {e}")
     except Exception as e:
-        print(f"An error occurred: {e}")
+        raise Exception(f"An error occurred : {e}")
