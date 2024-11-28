@@ -1,0 +1,22 @@
+#version: '3.8'
+#
+#services:
+#  c2_server:
+#    build: ./c2_server
+#    container_name: c2-socket-app
+#    ports:
+#      - "8080:8080"
+#    networks:
+#      - app-network
+#
+#  auto_download_server:
+#    build: ./auto-download-server
+#    container_name: auto-download-server
+#    ports:
+#      - "3000:3000"
+#    networks:
+#      - app-network
+#
+#networks:
+#  app-network:
+#    driver: bridge

