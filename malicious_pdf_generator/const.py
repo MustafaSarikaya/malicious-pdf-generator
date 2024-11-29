@@ -1,6 +1,6 @@
 # URL:
 URL_GRABIFY_LINK: str = "https://grabify.link/D5TUJA"
-URL_DOWNLOAD_FILE: str = "http://192.168.2.15:3000"
+URL_DOWNLOAD_FILE: str = "http://10.192.80.186:3000"
 
 # Payloads constants
 
