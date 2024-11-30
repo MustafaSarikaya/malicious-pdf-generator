@@ -9,7 +9,7 @@ setup(
     packages=find_packages(),
     install_requires=[
         "javascript==1!1.1.3",
-        "pdfalyzer==1.14.6",
+        "pdfalyzer==1.16.1",
         "pytest==8.1.1",
         "pytest-cov==4.1.0",
         "PyPDF2==2.12.1",
