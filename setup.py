@@ -17,7 +17,8 @@ setup(
         "pyfiglet==1.0.2",
         "elasticsearch==8.9.0",
         "python-dotenv==0.21.0",
-        "paramiko==3.5.0"
+        "paramiko==3.5.0",
+        "scp==0.15.0"
     ],
     entry_points={
         "console_scripts": [
