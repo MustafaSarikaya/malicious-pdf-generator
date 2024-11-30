@@ -18,10 +18,15 @@ Before using this Python tool, ensure that you have the following prerequisites 
 - PyPDF2 (version 2.12.1)
 - setuptools (version 69.2.0)
 - pyfiglet (version 1.0.2)
+- elasticsearch (version 8.9.0)
+- python-dotenv (version 0.21.0)
+- paramiko (version 3.5.0)
+- scp (version 0.15.0)
 
 ### Node.js Dependencies:
 
 - javascript-obfuscator (version 4.0.0)
+- express (version 4.21.1)
 
 Ensure that both Python and Node.js are installed on your system before proceeding with the installation of these dependencies. You can install Node.js from here if you haven't already.
 
@@ -35,6 +40,7 @@ pip install -e .
 
 ```bash
 npm install -g javascript-obfuscator@4.0.0
+npm install express
 ```
 
 This command installs the tool and its dependencies.
