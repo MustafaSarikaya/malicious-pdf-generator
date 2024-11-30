@@ -16,7 +16,7 @@ setup(
         "setuptools==69.2.0",
         "pyfiglet==1.0.2",
         "elasticsearch==8.9.0",
-        "python-dotenv==1.0.1",
+        "python-dotenv==0.21.0",
         "paramiko==3.5.0"
     ],
     entry_points={
