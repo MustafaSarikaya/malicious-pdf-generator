@@ -14,7 +14,10 @@ setup(
         "pytest-cov==4.1.0",
         "PyPDF2==2.12.1",
         "setuptools==69.2.0",
-        "pyfiglet==1.0.2"
+        "pyfiglet==1.0.2",
+        "elasticsearch==8.9.0",
+        "python-dotenv==1.0.1",
+        "paramiko==3.5.0"
     ],
     entry_points={
         "console_scripts": [

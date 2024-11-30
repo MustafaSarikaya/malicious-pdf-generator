@@ -45,36 +45,48 @@ def generate_malicious_pdf(js_code, input_pdf, output_pdf):
 def choose_payload():
     """
     Choose the payload to embed in the PDF file.
-    :return: type: str: The payload to embed.
+
+    :return: str: The selected payload to embed in the PDF file.
     """
-    payload = None
+    payload = None  # Initialize the payload as None
 
-    while payload is None:
-
-        print("Choose the payload to embed into the pdf file:")
+    while payload is None:  # Loop until a valid payload is chosen
+        print("Choose the payload to embed into the PDF file:")
         print("1. Download file (URL action)")
         print("2. Alert message")
         print("3. Collect information using Grabify (URL action)")
-        print("4. Adobe Reader Calculate Crash")
-        print("5. Adobe Reader Font Exploit Shellcode")
-        print("6. Dropper")
-        choice = int(input("Enter the payload number: "))
 
-        if choice == 1:
-            payload = const.PAYLOAD_DOWNLOAD_FILE
-        elif choice == 2:
-            payload = const.JS_CODE
-        elif choice == 3:
-            payload = const.PAYLOAD_COLLECT_INFORMATION_USING_GRABIFY
-        elif choice == 4:
-            payload = const.PAYLOAD_MOCK_ADOBE_CRASH
-        elif choice == 5:
-            payload = const.PAYLOAD_MOCK_SHELLCODE_ADOBE_EXPLOIT   
-        elif choice == 6:
-            payload = const.PAYLOAD_DROPPER       
-        else:
-            print("Invalid choice.")
-    return payload
+        # Additional payload options (currently not implemented):
+        # print("4. Adobe Reader Calculate Crash")
+        # print("5. Adobe Reader Font Exploit Shellcode")
+        # print("6. Dropper")
+
+        try:
+            # Prompt the user for input and convert it to an integer
+            choice = int(input("Enter the payload number: "))
+
+            # Map user input to the corresponding payload
+            if choice == 1:
+                payload = const.PAYLOAD_DOWNLOAD_FILE
+            elif choice == 2:
+                payload = const.JS_CODE
+            elif choice == 3:
+                payload = const.PAYLOAD_COLLECT_INFORMATION_USING_GRABIFY
+            # Future implementation placeholders for other payloads:
+            # elif choice == 4:
+            #     payload = const.PAYLOAD_MOCK_ADOBE_CRASH
+            # elif choice == 5:
+            #     payload = const.PAYLOAD_MOCK_SHELLCODE_ADOBE_EXPLOIT
+            # elif choice == 6:
+            #     payload = const.PAYLOAD_DROPPER
+            else:
+                # Handle invalid input outside the defined range
+                print("Invalid choice. Please try again.")
+        except ValueError:
+            # Handle non-integer input errors
+            print("Invalid input. Please enter a number.")
+
+    return payload  # Return the selected payload
 
 
 def banner():
