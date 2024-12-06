@@ -1,4 +1,4 @@
-from malicious_pdf_generator import obfuscated_code, embedded_javascript_into_pdf, create_ssh_client, transfer_file, execute_powershell_script, fetch_alerts, analyze_alerts, const
+from malicious_pdf_generator import obfuscated_code, embedded_javascript_into_pdf, create_ssh_client, transfer_file, execute_powershell_script, fetch_alerts, analyze_alerts, compute_file_hash, check_virusshare, analyze_virusshare_results, const
 
 import argparse
 import pyfiglet
@@ -169,6 +169,16 @@ def main():
     # Analyze alerts and output results
     log_file_path = os.getenv('LOG_FILE_PATH', 'alert_results.log')
     analyze_alerts(alerts, pdf_name, log_file_path)
+    
+    # Compute the hash of the PDF file
+    file_hash = compute_file_hash(local_pdf_path)
+    print(f"[INFO] Computed {hash_algorithm} hash of the file: {file_hash}")
+
+    # Submit the hash to VirusShare API
+    virusshare_result = check_virusshare(file_hash)
+
+    # Analyze and log the VirusShare results
+    analyze_virusshare_results(virusshare_result, log_file_path)
 
 if __name__ == "__main__":
     main()
