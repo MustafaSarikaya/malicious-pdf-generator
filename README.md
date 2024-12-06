@@ -33,7 +33,7 @@ Ensure that both Python and Node.js are installed on your system before proceedi
 
 ## Installation
 
-For detailed setup instructions, including configuring the Elastic Stack infrastructure, setting up the VirusShare API key, and configuring SSH connections to your testing VM, please refer to the ![Setup Guide]().
+For detailed setup instructions, including configuring the Elastic Stack infrastructure, setting up the VirusShare API key, and configuring SSH connections to your testing VM, please refer to the [Setup Guide]().
 
 ## Usage
 
