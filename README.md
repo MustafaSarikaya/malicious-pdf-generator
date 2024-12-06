@@ -4,7 +4,8 @@
 
 ## Overview
 
-The Malicious PDF Generator is a Python-based tool that allows you to generate PDF files with embedded JavaScript payloads. The tool provides three types of payloads: a download action and an alert message displaying the current date and track and collect information payload. 
+The Malicious PDF Generator is a Python-based tool designed for security professionals and researchers to generate PDF files with embedded JavaScript payloads for testing and educational purposes. In addition to payload embedding, this tool includes an **automated PDF detection testing process**, verifying the generated PDF against both the Elastic Stack and VirusShare services. This approach helps assess the effectiveness of your obfuscation techniques by determining if the generated PDF triggers security alerts or is flagged as malicious.
+
 
 ## Prerequisites
 Before using this Python tool, ensure that you have the following prerequisites installed:
@@ -32,18 +33,7 @@ Ensure that both Python and Node.js are installed on your system before proceedi
 
 ## Installation
 
-To install the tool, you need to have Python and pip installed on your system. Once you have these prerequisites, you can install the tool by running the following command in your terminal:
-
-```bash
-pip install -e .
-```
-
-```bash
-npm install -g javascript-obfuscator@4.0.0
-npm install express
-```
-
-This command installs the tool and its dependencies.
+For detailed setup instructions, including configuring the Elastic Stack infrastructure, setting up the VirusShare API key, and configuring SSH connections to your testing VM, please refer to the ![Setup Guide]().
 
 ## Usage
 
